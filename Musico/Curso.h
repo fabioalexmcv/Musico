@@ -1,5 +1,10 @@
 #pragma once
 #include "Data.h"
+#include <vector>
+#include <iostream>
+using std::vector;
+using std::cout;
+
 class Curso{
 
 	friend ostream &operator<< (ostream &, const Curso &); //Operador <<
@@ -13,6 +18,7 @@ public:
 
 	void ensinar();
 	void formarMusico();
+	void licoes();
 
 	const Curso &operator= (const Curso &);			//Operador =
 	bool operator== (const Curso &) const;			//Operador ==
