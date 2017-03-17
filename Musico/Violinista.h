@@ -2,6 +2,8 @@
 #include "Musico.h"
 class Violinista : public Musico{
 
+	friend ostream &operator<< (ostream &, const Violinista &);		//Operador <<
+
 public:
 
 	Violinista();
@@ -14,12 +16,19 @@ public:
 	void tocarViolino() const;
 	void dedilhar() const;
 	void addDedilhado(const string &);
+
+	const Violinista &operator= (const Violinista &);		//Operador =
+	bool operator== (const Violinista &) const;			//Operador ==
+	bool operator!= (const Violinista &violin) const	//Operador !=
+	{
+		return !(*this == violin);
+	}
 	
 private:
 
-	string tipoArco = "redondo";
+	string tipoArco = "Redondo";
 	string tamViolino = "1/4";
-	string dedilhado = "padrão";
+	string dedilhado;
 	string *dedilhadoNome;
 	int quantDedilhado;
 };
