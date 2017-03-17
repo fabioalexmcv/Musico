@@ -12,10 +12,10 @@ public:
 	Saxofonista(const string &tipoSax, const string &tamSax, const string &melodia, int quantMelodia, const Curso &cursoMusica);
 	virtual ~Saxofonista();
 
-	void fazerMelodia();
-	void informacoes();
-	void tocarSax();
-	void soprarSuave();
+	void fazerMelodia() const;
+	void informacoes() const;
+	void tocarSax() const;
+	void soprarSuave() const;
 	void addMelodia(const string &);
 
 	const Saxofonista &operator= (const Saxofonista &);		//Operador =
@@ -25,12 +25,15 @@ public:
 		return !(*this == sax);
 	}
 
-protected:
+	static int numeroSax;
 
-	string tipoSax = "Tenor";
-	string tamSax = "Grande";
+private:
+
+	string tipoSax;
+	string tamSax;
 	string melodia;
 	string *melodiaNome;
 	int quantMelodia;
+	static const int quantMaxSax;
 };
 

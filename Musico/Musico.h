@@ -37,6 +37,5 @@ protected:
 	string nomeArtistico;
 	string instrumento;
 	const Curso cursoMusica;
-
 };
 

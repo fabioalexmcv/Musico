@@ -24,12 +24,15 @@ public:
 		return !(*this == violin);
 	}
 	
+	static int numeroViolin;
+
 private:
 
-	string tipoArco = "Redondo";
-	string tamViolino = "1/4";
+	string tipoArco;
+	string tamViolino;
 	string dedilhado;
 	string *dedilhadoNome;
 	int quantDedilhado;
+	static const int quantMaxViolin;
 };
 

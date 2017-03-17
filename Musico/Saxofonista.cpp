@@ -1,10 +1,15 @@
 #include "Saxofonista.h"
 
+int numeroSax = 0;
+const int quantMaxSax = 4;
+
 Saxofonista::Saxofonista(){
 	this->tipoSax = "";
 	this->tamSax = "";
 	this->melodia = "";
 	this->quantMelodia = 0;
+
+	numeroSax++;
 }
 
 Saxofonista::Saxofonista(const Saxofonista &sax)
@@ -13,6 +18,8 @@ Saxofonista::Saxofonista(const Saxofonista &sax)
 	this->tamSax = sax.tamSax;
 	this->melodia = sax.melodia;
 	this->quantMelodia = sax.quantMelodia;
+
+	numeroSax++;
 }
 
 Saxofonista::Saxofonista(const string &tipoSax, const string &tamSax, const string &melodia, int quantMelodia, const Curso &cursoMusica)
@@ -21,23 +28,28 @@ Saxofonista::Saxofonista(const string &tipoSax, const string &tamSax, const stri
 	this->tamSax = tamSax;
 	this->melodia = melodia;
 	this->quantMelodia = quantMelodia;
+
+	numeroSax++;
 }
 
 Saxofonista::~Saxofonista(){
 	delete [] melodiaNome;
+
+	numeroSax--;
 }
 
-void Saxofonista::fazerMelodia(){
+void Saxofonista::fazerMelodia() const{
 	tocarSax();
 }
 
-void Saxofonista::informacoes(){
-	cout << "Tipo do Arco: " << tipoSax << '\n'
-		<< "Tamanho do violino: " << tamSax << '\n';
+void Saxofonista::informacoes() const {
+	cout << "Tipo do saxofone: " << tipoSax << '\n'
+		<< "Tamanho do saxofone: " << tamSax << '\n';
 }
 
-void Saxofonista::tocarSax(){
+void Saxofonista::tocarSax() const {
 	cout << "Música tema Os Simpsons..\n\n"
+
 		<< "DO MI FA# LA SOL MI DO la\n"
 		<< "fa# fa# fa# sol\n"
 		<< "fa fa fa sol sib\n"
@@ -53,7 +65,7 @@ void Saxofonista::tocarSax(){
 		<< "re# re# re# mi\n";
 }
 
-void Saxofonista::soprarSuave(){
+void Saxofonista::soprarSuave() const {
 	cout << "Tocando a cifra soprando o sax suavemente..\n";
 	tocarSax();
 }

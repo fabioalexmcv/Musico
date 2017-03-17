@@ -1,10 +1,15 @@
 #include "Violinista.h"
 
+int numeroViolin = 0;
+const int quantMaxViolin = 5;
+
 Violinista::Violinista(){
 	this->tipoArco = "";
 	this->tamViolino = "";
 	this->dedilhado = "";
 	this->quantDedilhado = 0;
+
+	numeroViolin++;
 }
 
 Violinista::Violinista(const Violinista &violin)
@@ -13,6 +18,8 @@ Violinista::Violinista(const Violinista &violin)
 	this->tamViolino = violin.tamViolino;
 	this->dedilhado = violin.dedilhado;
 	this->quantDedilhado = violin.quantDedilhado;
+
+	numeroViolin++;
 }
 
 Violinista::Violinista(const string &tipoArco, const string &tamViolino, const string &dedilhado, int quatDedilhado, const Curso &cursoMusica)
@@ -24,10 +31,14 @@ Violinista::Violinista(const string &tipoArco, const string &tamViolino, const s
 		this->quantDedilhado = quantDedilhado;
 	else
 		this->quantDedilhado = 0;
+
+	numeroViolin++;
 }
 
 Violinista::~Violinista(){
 	delete [] dedilhadoNome;
+
+	numeroViolin--;
 }
 
 void Violinista::fazerMelodia() const{

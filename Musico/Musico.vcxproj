@@ -122,6 +122,7 @@
   <ItemGroup>
     <ClCompile Include="Curso.cpp" />
     <ClCompile Include="Data.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Musico.cpp" />
     <ClCompile Include="Percursionista.cpp" />
     <ClCompile Include="Pessoa.cpp" />
