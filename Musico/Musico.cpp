@@ -1,16 +1,19 @@
 #include "Musico.h"
 
-Musico::Musico(){																//Construtor default
+Musico::Musico()
+: cursoMusica(){																//Construtor default
 	this->nomeArtistico = "";
 	this->instrumento = "";
 }
 
-Musico::Musico(const Musico &musico){											//Construtor de cópia
+Musico::Musico(const Musico &musico)
+: cursoMusica(musico.cursoMusica){												//Construtor de cópia
 	this->nomeArtistico = musico.nomeArtistico;
 	this->instrumento = musico.instrumento;
 }
 
-Musico::Musico(const string &nomeArtistico, const string &instrumento){			//Construtor
+Musico::Musico(const string &nomeArtistico, const string &instrumento, const Curso &curso)	//Construtor
+: cursoMusica(curso), Pessoa(nome, idade){
 	this->nomeArtistico = nomeArtistico;
 	this->instrumento = instrumento;
 }
@@ -45,8 +48,17 @@ void Musico::cantarAfinado(){
 		<< "Amigo estou aqui'" << '\n';
 }
 
+void Musico::fazerMelodia(){}
+
+void Musico::informacoes() {
+	cout << "Nome: " << nome << '\n'
+		<< "Nome Arstístico: " << nomeArtistico << '\n'
+		<< "Idade: " << idade << " anos.\n"
+		<< "Instrumento: " << instrumento << '\n';
+}
+
 ostream &operator << (ostream &output, const Musico &musico) {		//sobrecarga de operadores <<
-	output << " | Nome " << musico.nomeArtistico
+	output << " | Nome: " << musico.nomeArtistico
 		   << " | instrumento: " << musico.instrumento << '\n';
 }
 

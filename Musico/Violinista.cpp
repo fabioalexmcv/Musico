@@ -3,27 +3,46 @@
 Violinista::Violinista(){
 	this->tipoArco = "";
 	this->tamViolino = "";
+	this->dedilhado = "";
+	this->quantDedilhado = 0;
 }
 
-Violinista::Violinista(const Violinista &violin){
+Violinista::Violinista(const Violinista &violin)
+: Musico(static_cast< Musico >(violin)) {
 	this->tipoArco = violin.tipoArco;
 	this->tamViolino = violin.tamViolino;
+	this->dedilhado = violin.dedilhado;
+	this->quantDedilhado = violin.quantDedilhado;
 }
 
-Violinista::Violinista(const string &tipoArco, const string &tamViolino){
+Violinista::Violinista(const string &tipoArco, const string &tamViolino, const string &dedilhado, int quatDedilhado, const Curso &cursoMusica)
+: Musico(nomeArtistico, instrumento, cursoMusica){
 	this->tipoArco = tipoArco;
 	this->tamViolino = tamViolino;
+	this->dedilhado = dedilhado;
+	if (quantDedilhado >= 0)
+		this->quantDedilhado = quantDedilhado;
+	else
+		this->quantDedilhado = 0;
 }
-
 
 Violinista::~Violinista(){
+	delete [] dedilhadoNome;
 }
 
-void Violinista::fazerMelodia() {
+void Violinista::fazerMelodia() const{
 	tocarViolino();
 }
 
-void Violinista::tocarViolino(){
+void Violinista::informacoes() const{
+	cout
+		<< "Tipo do Arco: " << tipoArco << '\n'
+		<< "Tamanho do violino: " << tamViolino << '\n'
+		<< "Dedilhado usado: " << dedilhado << '\n';
+
+}
+
+void Violinista::tocarViolino() const{
 	cout << "4/4 - 9ª Sinfonia de Beethoven..\n\n"
 
 		<< "			 C          G       C        G					 \n"
@@ -40,12 +59,24 @@ void Violinista::tocarViolino(){
 		<< "	G | ----------------------------------------0------------" << '\n';
 }
 
-void Violinista::dedilhar(){
+void Violinista::dedilhar() const{
 	cout << "Tocando a trablatura dedilhando, sem utilizar o arco.." << '\n';
 	tocarViolino();
 }
 
 
-void Violinista::addDedilhado(){
+void Violinista::addDedilhado(const string &dedilhado){
+	string *aux = new string[quantDedilhado];
 
+	for (int i = 0; i < quantDedilhado; i++)
+		aux[i] = dedilhadoNome[i];
+
+	delete [] dedilhadoNome;
+
+	dedilhadoNome = new string[++quantDedilhado];
+
+	for (int i = 0; i < quantDedilhado - 1; i++)
+		dedilhadoNome[quantDedilhado - 1] = dedilhado;
+
+	delete [] aux;
 }

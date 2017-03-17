@@ -6,18 +6,21 @@ public:
 
 	Violinista();
 	Violinista(const Violinista &);
-	Violinista(const string &tipoArco, const string &tamViolino);
+	Violinista(const string &tipoArco, const string &tamViolino, const string &dedilhado, int quatDedilhado , const Curso &cursoMusica);
 	virtual ~Violinista();
 
-	void fazerMelodia();
-	void tocarViolino();
-	void dedilhar();
-	void addDedilhado();
+	void fazerMelodia() const;
+	void informacoes() const;
+	void tocarViolino() const;
+	void dedilhar() const;
+	void addDedilhado(const string &);
 	
 private:
 
-	string tipoArco;
-	string tamViolino;
-
+	string tipoArco = "redondo";
+	string tamViolino = "1/4";
+	string dedilhado = "padrão";
+	string *dedilhadoNome;
+	int quantDedilhado;
 };
 

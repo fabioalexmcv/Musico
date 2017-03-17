@@ -35,7 +35,6 @@ void Curso::ensinar(){
 		<< "Para se profissionalizar, você deve escolher o instrumento com o qual tem mais intimidade e treinar todos os dias...\n";
 }
 
-
 void Curso::formarMusico(){
 	cout << "Parabéns! Você completou o curso de " << nomeCurso << ", pegue o seu diploma na diretoria.\n";
 }

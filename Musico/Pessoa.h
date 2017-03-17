@@ -27,7 +27,7 @@ public:
 		return !(*this == pessoa);
 	}
 	
-private:
+protected:
 
 	string nome;
 	int idade;
