@@ -47,7 +47,8 @@ void Percursionista::fazerMelodia() const {
 
 void Percursionista::informacoes() const {
 	cout << "Tipo do instrumento: " << tipoInstrumento << '\n'
-		<< "Quantidade de tambores: " << quantTambores << '\n';
+		<< "Quantidade de tambores: " << quantTambores << '\n'
+		<< "Quantidade de ritmos: " << quantRitmo << '\n';
 }
 
 void Percursionista::batucar() const {
@@ -68,6 +69,14 @@ void Percursionista::batucar() const {
 
 void Percursionista::marcarCompasso() const{
 	cout << "Tocar apenas a marcação do tempo no chimbau.. tss! tss! tss! tss!\n";
+}
+
+int Percursionista::mostrarQuantTambor(){
+	return this->quantTambores;
+}
+
+void Percursionista::addTambor(int _quantTambores) {						//set
+	quantTambores = _quantTambores;
 }
 
 void Percursionista::addRitmo(const string &ritmo){

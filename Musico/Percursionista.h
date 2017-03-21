@@ -15,8 +15,10 @@ public:
 	void informacoes() const;
 	void batucar() const;
 	void marcarCompasso() const;
+	int mostrarQuantTambor();
+	void addTambor(int);
 	void addRitmo(const string &);
-
+	
 	const Percursionista &operator= (const Percursionista &);		//Operador =
 	bool operator== (const Percursionista &) const;					//Operador ==
 	bool operator!= (const Percursionista &perc) const				//Operador !=

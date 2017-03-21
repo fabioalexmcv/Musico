@@ -41,14 +41,14 @@ int main(int argc, char **argv){
 	
 	for (size_t i = 0; i < musicos.size(); i++){
 		
-	/*	Moto *derivedPtr = dynamic_cast<Moto*> (musicos[i]);
+		Percursionista *derivedPtr = dynamic_cast<Percursionista*> (musicos[i]);
         if (derivedPtr != 0){
-			int rotacaoMotor = derivedPtr->mostrarRotacaoMotor();
-			cout << rotacaoMotor << '\n';
-			derivedPtr->aumentarGiro(10 * rotacaoMotor);
-			cout << "Rotacao: " << derivedPtr->mostrarRotacaoMotor() << '\n';                     
+			int quantTambores = derivedPtr->mostrarQuantTambor();
+			cout << quantTambores << '\n';
+			derivedPtr->addTambor(quantTambores + 1);
+			cout << "Quantidade de tambores: " << derivedPtr->mostrarQuantTambor() << '\n';         
 		} 
-	}*/
+	}
 	
 	for (size_t j = 0; j < musicos.size(); j++){
 		cout << "Deletando objetos... " << typeid(*musicos[j]).name() << '\n';
