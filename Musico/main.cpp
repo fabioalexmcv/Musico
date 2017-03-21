@@ -20,12 +20,15 @@ using std::vector;
 
 int main(int argc, char **argv){
 	
+	Curso musica("Curso de violino", 5, (01, 01, 2012));
+	Curso musica2("Curso de saxofone", 5, (01, 01, 2011));
+	Curso musica3("Curso de percussão", 5, (01, 06, 2014));
+
     vector <Musico *> musicos(3);
 	
-	//musicos.push_back(new Violinista("Redondo", "1/4", "Padrão", 1, "Curso de violinho"));
-	Violinista violin1("Redondo", "1/4", "Padrão", 1, "Curso de violinho");
-    Saxofonista sax1("Tenor", "Grande", "The Simpsons", 2, "Curso de saxofone");
-    Percursionista perc1("Acústico", 6, "merengue", 3, "Curso de bateria");
+	Violinista violin1("Redondo", "1/4", "Padrão", 1, musica);
+    Saxofonista sax1("Tenor", "Grande", "The Simpsons", 2, musica2);
+    Percursionista perc1("Acústico", 6, "merengue", 3, musica3);
 	
 	violin1.fazerMelodia;
 	violin1.informacoes;

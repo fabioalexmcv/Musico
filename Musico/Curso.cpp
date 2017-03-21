@@ -42,9 +42,9 @@ void Curso::formarMusico(){
 void Curso::licoes(){
 	vector <Curso*> licoes(3);
 
-	Curso licao1 ("Musicalização", 1, 01/01/12);
-	Curso licao2 ("Vocalização", 1, 01/01/13);
-	Curso licao3 ("Profissionalização", 3, 01/01/14);
+	Curso licao1 ("Musicalização", 1, (01,01,12));
+	Curso licao2 ("Vocalização", 1, (01,01,13));
+	Curso licao3 ("Profissionalização", 3, (01,01,14));
 }
 
 ostream &operator << (ostream &output, const Curso &curso) {		//sobrecarga de operadores <<
