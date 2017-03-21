@@ -22,13 +22,13 @@ int main(int argc, char **argv){
 	
 	Curso musica("Curso de violino", 5, (01, 01, 2012));
 	Curso musica2("Curso de saxofone", 5, (01, 01, 2011));
-	Curso musica3("Curso de percuss„o", 5, (01, 06, 2014));
+	Curso musica3("Curso de percuss√£o", 5, (01, 06, 2014));
 
-    vector <Musico *> musicos(3);
+    	vector <Musico *> musicos(3);
 	
-	Violinista violin1("Redondo", "1/4", "Padr„o", 1, musica);
-    Saxofonista sax1("Tenor", "Grande", "The Simpsons", 2, musica2);
-    Percursionista perc1("Ac˙stico", 6, "merengue", 3, musica3);
+	Violinista violin1("Redondo", "1/4", "Padr√£o", 1, musica);
+    	Saxofonista sax1("Tenor", "Grande", "The Simpsons", 2, musica2);
+    	Percursionista perc1("Ac√∫stico", 6, "merengue", 3, musica3);
 	
 	violin1.fazerMelodia;
 	violin1.informacoes;
@@ -42,7 +42,7 @@ int main(int argc, char **argv){
 	for (size_t i = 0; i < musicos.size(); i++){
 		
 		Percursionista *derivedPtr = dynamic_cast<Percursionista*> (musicos[i]);
-        if (derivedPtr != 0){
+        	if (derivedPtr != 0){
 			int quantTambores = derivedPtr->mostrarQuantTambor();
 			cout << quantTambores << '\n';
 			derivedPtr->addTambor(quantTambores + 1);
@@ -53,7 +53,7 @@ int main(int argc, char **argv){
 	for (size_t j = 0; j < musicos.size(); j++){
 		cout << "Deletando objetos... " << typeid(*musicos[j]).name() << '\n';
 		delete musicos[j];
-    }
+    	}
 	
  	return 0;
 }
